@@ -37,7 +37,7 @@ public class Canvas {
 		startGUI();
 	}
 
-	public void startGUI() {
+	private void startGUI() {
 		field.setSize(500, 500);
 		field.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		field.setLayout(new BorderLayout());
@@ -69,8 +69,8 @@ public class Canvas {
 			super.paintComponent(g);
 			Graphics2D graphics2d = (Graphics2D)g;
 
-			int x = bot.getX();
-			int y = bot.getY();
+			double x = bot.getX();
+			double y = bot.getY();
 			double rot = bot.getRotation();
 
 			double[] pt = {x+5, y+20};
@@ -78,7 +78,7 @@ public class Canvas {
 			AffineTransform.getRotateInstance(rot-Math.PI/2, x, y).transform(pt, 0, pt, 0, 1);
 			AffineTransform.getRotateInstance(rot-Math.PI/2, x, y).transform(pt2, 0, pt2, 0, 1);			
 
-			Polygon triangle = new Polygon(new int[] {x, (int) pt[0], (int) pt2[0]}, new int[] {y, (int) pt[1], (int) pt2[1]}, 3);
+			Polygon triangle = new Polygon(new int[] {(int) x, (int) pt[0], (int) pt2[0]}, new int[] {(int) y, (int) pt[1], (int) pt2[1]}, 3);
 			graphics2d.setColor(Color.BLUE);
 			graphics2d.fillPolygon(triangle);
 			graphics2d.setColor(Color.BLACK);

@@ -2,8 +2,8 @@
 
 public class Figure {
 	
-	private int xPos = 0;
-	private int yPos = 0;
+	private double xPos = 0;
+	private double yPos = 0;
 	private double rotation = 0; // in radians
 	private int distanceTraveled = 0;
 	
@@ -32,11 +32,11 @@ public class Figure {
 		return rotation;
 	}
 	
-	public int getX() {
+	public double getX() {
 		return xPos;
 	}
 	
-	public int getY() {
+	public double getY() {
 		return yPos;
 	}
 }
